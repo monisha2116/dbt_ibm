@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: int_customers
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+
+  - name: int_orders
+    columns:
+      - name: status_code
+        description: '{{doc("silvercol")}}'
+
+  - name: int_part_supps
+    columns:
+      - name: inventory_value_usd
+        description: "{{doc('silvercol')}}"
+      - name: unit_margin
+      - name: margin_percent
+      - name: inventory_level 
+      - name: supplier_finacial_health
+      - name: supplier_data_status
+      - name: normal_margin_status
+      - name: inventory_value_error
+        description: Values in curreny euro
