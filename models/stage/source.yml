@@ -1,0 +1,33 @@
+version : 2
+
+sources : 
+  - name : src
+    database : sourcedb
+    schema : mk_mall 
+
+    tables : 
+      - name : regions
+        description: Table for Regional Information
+        columns:
+          - name: n_regionkey
+            description: Unique ID for each region
+      - name : nations
+      - name : customers
+      - name: orders2
+        config:
+          loaded_at_field: o_orderdate::timestamp
+          freshness: 
+            warn_after: {count: 1, period: day} 
+             
+            
+
+      - name: suppliers
+
+      - name: line_items
+
+      - name: part_supps
+
+      - name: parts
+
+
+      

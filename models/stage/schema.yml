@@ -1,0 +1,24 @@
+version: 2 
+models:
+  - name: stg_nations
+    columns:
+      - name: nation_id
+        tests:
+          - unique
+          - not_null
+          
+
+  - name: stg_region
+    columns:
+      - name: name
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['MIDDLE EAST', 'EUROPE', 'AFRICA', 'AMERICA','ASIA','India','Nepal']
+              config:
+                store_failures: true
+
+seeds:
+  - name: supplier_names
+    config:
+      schema: suppnames
